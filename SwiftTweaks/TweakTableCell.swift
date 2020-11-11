@@ -80,6 +80,10 @@ internal final class TweakTableCell: UITableViewCell {
 		let touchHighlightView = UIView()
 		touchHighlightView.backgroundColor = AppTheme.Colors.tableCellTouchHighlight
 		self.selectedBackgroundView = touchHighlightView
+		
+		if #available(iOS 14.0, *) {
+            		contentView.isUserInteractionEnabled = false
+	        }
 	}
 
 	required init?(coder aDecoder: NSCoder) {
